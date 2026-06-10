@@ -19,7 +19,7 @@ export default function HomeContent() {
           <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-violet-100/40 blur-3xl" />
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pt-28 sm:pb-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-20 sm:pt-24 sm:pb-20">
           <div className="text-center max-w-3xl mx-auto">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-medium mb-6">
@@ -72,7 +72,7 @@ export default function HomeContent() {
       </section>
 
       {/* ===== Screenshot Section ===== */}
-      <section className="py-16 sm:py-20 bg-slate-50/50">
+      <section className="py-16 sm:py-12 bg-slate-50/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="section-title">{t.home.seeInActionTitle}</h2>
