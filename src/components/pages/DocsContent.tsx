@@ -21,7 +21,7 @@ export default function DocsContent() {
   return (
     <>
       {/* Header */}
-      <section className="py-16 sm:py-20 bg-slate-50/50 border-b border-slate-100">
+      {/* <section className="py-16 sm:py-20 bg-slate-50/50 border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
             <span className="gradient-text">{d.titleAccent}</span>
@@ -30,7 +30,7 @@ export default function DocsContent() {
             {d.subtitle}
           </p>
         </div>
-      </section>
+      </section> */}
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid lg:grid-cols-4 gap-10">
