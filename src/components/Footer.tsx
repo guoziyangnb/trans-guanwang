@@ -1,26 +1,31 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-
-const footerLinks = [
-  {
-    title: "Product",
-    links: [
-      { label: "Features", href: "/features" },
-      { label: "Download", href: "/download" },
-      { label: "Docs", href: "/docs" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "GitHub", href: "https://github.com" },
-      { label: "Issues", href: "https://github.com" },
-      { label: "Changelog", href: "/docs" },
-    ],
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const footerLinks = [
+    {
+      title: t.footer.product,
+      links: [
+        { label: t.footer.features, href: "/features" },
+        { label: t.footer.download, href: "/download" },
+        { label: t.footer.docs, href: "/docs" },
+      ],
+    },
+    {
+      title: t.footer.resources,
+      links: [
+        { label: t.footer.github, href: "https://github.com" },
+        { label: t.footer.issues, href: "https://github.com" },
+        { label: t.footer.changelog, href: "/docs" },
+      ],
+    },
+  ];
+
   return (
     <footer className="border-t border-slate-100 bg-slate-50/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -40,8 +45,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
-              A lightweight desktop translator with local-trans model
-              translation, online LLM providers, and global shortcut launch.
+              {t.footer.brandDesc}
             </p>
           </div>
 
@@ -69,7 +73,7 @@ export default function Footer() {
           {/* Open Source */}
           <div>
             <h3 className="font-semibold text-sm text-slate-900 mb-3">
-              Open Source
+              {t.footer.openSource}
             </h3>
             <ul className="space-y-2.5">
               <li>
@@ -87,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="text-sm text-slate-500">
-                  MIT License
+                  {t.footer.mitLicense}
                 </span>
               </li>
             </ul>
@@ -97,7 +101,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-10 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-400">
-            &copy; {new Date().getFullYear()} TransLite. Open source under MIT License.
+            &copy; {new Date().getFullYear()} {t.footer.copyrightSuffix}
           </p>
           <p className="text-sm text-slate-400">
             Built with Electron &middot; Vue 3 &middot; ONNX Runtime

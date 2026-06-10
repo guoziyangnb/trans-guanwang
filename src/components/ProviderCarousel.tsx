@@ -1,3 +1,7 @@
+"use client";
+
+import { useLanguage } from "@/i18n/LanguageContext";
+
 const providers = [
   { name: "DeepSeek", color: "bg-blue-50 text-blue-700 border-blue-200" },
   { name: "GLM", color: "bg-indigo-50 text-indigo-700 border-indigo-200" },
@@ -11,22 +15,24 @@ const providers = [
   { name: "OpenAI Compatible", color: "bg-slate-50 text-slate-700 border-slate-200" },
 ];
 
-const categories = [
-  {
-    title: "Chinese Providers",
-    providers: ["DeepSeek", "GLM", "Kimi", "Qwen", "Doubao", "MiniMax"],
-  },
-  {
-    title: "International Providers",
-    providers: ["OpenAI", "Claude", "Gemini"],
-  },
-  {
-    title: "Compatible Gateways",
-    providers: ["OpenAI Compatible", "Anthropic API"],
-  },
-];
-
 export default function ProviderCarousel() {
+  const { t } = useLanguage();
+
+  const categories = [
+    {
+      title: t.providerCarousel.chinese,
+      providers: ["DeepSeek", "GLM", "Kimi", "Qwen", "Doubao", "MiniMax"],
+    },
+    {
+      title: t.providerCarousel.international,
+      providers: ["OpenAI", "Claude", "Gemini"],
+    },
+    {
+      title: t.providerCarousel.gateways,
+      providers: ["OpenAI Compatible", "Anthropic API"],
+    },
+  ];
+
   return (
     <div className="space-y-10 max-w-5xl mx-auto">
       {/* Tag Cloud */}
