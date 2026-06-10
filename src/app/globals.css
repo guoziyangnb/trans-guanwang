@@ -256,6 +256,156 @@ html {
   }
 }
 
+/* Contact illustration — gradient panel with floating greetings */
+.contact-illustration {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  min-height: 480px;
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 50%, #c026d3 100%);
+  box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.4);
+  isolation: isolate;
+}
+.contact-illustration::before,
+.contact-illustration::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  z-index: 0;
+}
+.contact-illustration::before {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  right: -80px;
+  background: rgba(236, 72, 153, 0.4);
+}
+.contact-illustration::after {
+  width: 260px;
+  height: 260px;
+  bottom: -60px;
+  left: -60px;
+  background: rgba(99, 102, 241, 0.5);
+}
+.contact-illustration .greeting {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  animation: floatY 6s ease-in-out infinite;
+  z-index: 2;
+}
+.contact-illustration .logo-orb {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.contact-illustration .logo-orb-inner {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25),
+              0 0 0 8px rgba(255, 255, 255, 0.15),
+              0 0 0 16px rgba(255, 255, 255, 0.08);
+  animation: orbPulse 4s ease-in-out infinite;
+}
+.contact-illustration .caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.75rem;
+  text-align: center;
+  color: #fff;
+  z-index: 4;
+  padding: 0 1.5rem;
+}
+.contact-illustration .caption h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.contact-illustration .caption p {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+/* WeChat tooltip — popover with arrow + zoom-in animation */
+.wechat-tooltip-wrap {
+  position: relative;
+}
+.wechat-tooltip {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.25),
+              0 0 0 1px rgba(139, 92, 246, 0.15);
+  animation: tooltipPop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-origin: bottom center;
+}
+.wechat-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  rotate: 45deg;
+  margin-top: -7px;
+}
+.wechat-tooltip-image {
+  display: block;
+  border-radius: 0.75rem;
+}
+.wechat-tooltip-caption {
+  margin-top: 0.625rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+@keyframes tooltipPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.85) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1) translateY(0);
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {

@@ -17,6 +17,7 @@ export default function NavBar() {
     { href: "/features", label: t.nav.features },
     { href: "/download", label: t.nav.download },
     { href: "/docs", label: t.nav.docs },
+    { href: "/contact", label: t.nav.contact },
   ];
 
   return (

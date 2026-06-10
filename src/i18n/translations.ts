@@ -6,6 +6,7 @@ const en = {
     features: "Features",
     download: "Download",
     docs: "Docs",
+    contact: "Contact",
     downloadCta: "Download",
   },
   home: {
@@ -295,6 +296,33 @@ const en = {
       ],
     },
   },
+  contact: {
+    methodsTitle: "Contact Methods",
+    methodsSubtitle: "Pick whichever channel works best for you.",
+    illustrationTitle: "Let's Connect",
+    illustrationDesc:
+      "Translation builds bridges. So does a friendly hello.",
+    email: {
+      title: "Email",
+      desc: "For collaboration, feedback, or anything else.",
+      action: "Copy Email",
+      copied: "Copied!",
+    },
+    github: {
+      title: "GitHub",
+      desc: "Issues, pull requests, and source code.",
+      action: "Visit GitHub",
+    },
+    wechat: {
+      title: "WeChat Group",
+      desc: "Join our WeChat group chat for discussions and updates.",
+      action: "View QR Code",
+      hint: "Scan with WeChat to join",
+    },
+    responseTitle: "Response Time",
+    responseDesc:
+      "I usually reply within 1–2 business days. For urgent matters, please open a GitHub issue.",
+  },
   footer: {
     brandDesc:
       "A lightweight desktop translator with local-trans model translation, online LLM providers, and global shortcut launch.",
@@ -320,6 +348,7 @@ const zh: Dict = {
     features: "功能",
     download: "下载",
     docs: "文档",
+    contact: "联系我",
     downloadCta: "下载",
   },
   home: {
@@ -585,6 +614,32 @@ const zh: Dict = {
         },
       ],
     },
+  },
+  contact: {
+    methodsTitle: "联系方式",
+    methodsSubtitle: "选择你最方便的渠道与我联系。",
+    illustrationTitle: "保持联系",
+    illustrationDesc: "翻译连接世界，一句问候也是。",
+    email: {
+      title: "邮箱",
+      desc: "适合合作、反馈或其他事宜。",
+      action: "复制邮箱",
+      copied: "已复制",
+    },
+    github: {
+      title: "GitHub",
+      desc: "提交 Issue、Pull Request 或查看源码。",
+      action: "前往 GitHub",
+    },
+    wechat: {
+      title: "微信交流群",
+      desc: "加入微信群交流讨论与获取最新动态。",
+      action: "查看二维码",
+      hint: "微信扫码加入",
+    },
+    responseTitle: "回复时间",
+    responseDesc:
+      "我通常会在 1–2 个工作日内回复。如有紧急事宜，建议提交 GitHub Issue。",
   },
   footer: {
     brandDesc:
