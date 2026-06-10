@@ -2,12 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import FeatureGrid from "@/components/FeatureGrid";
 import ProviderCarousel from "@/components/ProviderCarousel";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function HomeContent() {
   const { t } = useLanguage();
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lightbox]);
 
   return (
     <>
@@ -79,7 +95,16 @@ export default function HomeContent() {
             <p className="section-subtitle">{t.home.seeInActionSubtitle}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+            <button
+              type="button"
+              className="shot-card text-left"
+              onClick={() =>
+                setLightbox({
+                  src: "/screenshot-workspace.png",
+                  alt: "TransLite Translation Workspace",
+                })
+              }
+            >
               <Image
                 src="/screenshot-workspace.png"
                 alt="TransLite Translation Workspace"
@@ -96,8 +121,17 @@ export default function HomeContent() {
                   {t.home.workspaceDesc}
                 </p>
               </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+            </button>
+            <button
+              type="button"
+              className="shot-card text-left"
+              onClick={() =>
+                setLightbox({
+                  src: "/screenshot-settings.png",
+                  alt: "TransLite Provider Settings",
+                })
+              }
+            >
               <Image
                 src="/screenshot-settings.png"
                 alt="TransLite Provider Settings"
@@ -114,7 +148,7 @@ export default function HomeContent() {
                   {t.home.settingsDesc}
                 </p>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -176,6 +210,38 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* ===== Lightbox ===== */}
+      {lightbox && (
+        <div
+          className="lightbox-overlay"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            className="lightbox-close"
+            aria-label="Close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightbox(null);
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={lightbox.src}
+            alt={lightbox.alt}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   );
 }
