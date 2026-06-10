@@ -4,12 +4,11 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import { translations, type Dict, type Language } from "./translations";
 
-export const LANG_STORAGE_KEY = "translite-lang";
+export const LANG_COOKIE = "translite-lang";
 
 interface LanguageContextValue {
   lang: Language;
@@ -23,27 +22,22 @@ const LanguageContext = createContext<LanguageContextValue>({
   t: translations.en,
 });
 
-function applyHtmlLang(lang: Language) {
-  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
-}
-
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  // Server always renders English; the saved preference is applied after
-  // hydration to avoid a server/client markup mismatch.
-  const [lang, setLangState] = useState<Language>("en");
-
-  useEffect(() => {
-    const saved = localStorage.getItem(LANG_STORAGE_KEY);
-    if (saved === "zh" || saved === "en") {
-      setLangState(saved);
-      applyHtmlLang(saved);
-    }
-  }, []);
+export function LanguageProvider({
+  initialLang = "en",
+  children,
+}: {
+  initialLang?: Language;
+  children: React.ReactNode;
+}) {
+  // initialLang is provided by the server layout after reading the cookie,
+  // so the very first render (server + client hydration) already shows the
+  // correct language. No useEffect / no localStorage — no flash.
+  const [lang, setLangState] = useState<Language>(initialLang);
 
   const setLang = useCallback((next: Language) => {
     setLangState(next);
-    localStorage.setItem(LANG_STORAGE_KEY, next);
-    applyHtmlLang(next);
+    document.cookie = `${LANG_COOKIE}=${next}; path=/; max-age=31536000; samesite=lax`;
+    document.documentElement.lang = next === "zh" ? "zh-CN" : "en";
   }, []);
 
   return (

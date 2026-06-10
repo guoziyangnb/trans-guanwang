@@ -42,3 +42,5 @@ next-env.d.ts
 
 # custom
 .claude/
+.playwright-cli/
+response-zh.html
