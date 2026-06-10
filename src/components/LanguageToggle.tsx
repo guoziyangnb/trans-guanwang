@@ -37,7 +37,7 @@ export default function LanguageToggle() {
           onClick={() => setLang(option.value)}
           className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${
             lang === option.value
-              ? "bg-indigo-600 text-white"
+              ? "bg-emerald-600 text-white"
               : "text-slate-500 hover:text-slate-900 hover:bg-slate-100"
           }`}
           aria-pressed={lang === option.value}

@@ -101,7 +101,7 @@ export default function ContactContent() {
             {/* Email */}
             <div className="feature-card">
               <div className="flex items-start gap-4">
-                <div className="inline-flex p-3 rounded-xl bg-indigo-50 text-indigo-600 shrink-0">
+                <div className="inline-flex p-3 rounded-xl bg-emerald-50 text-emerald-600 shrink-0">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
@@ -123,7 +123,7 @@ export default function ContactContent() {
                       className={`inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg border transition-all duration-200 ${
                         copied
                           ? "bg-emerald-50 border-emerald-200 text-emerald-700"
-                          : "bg-white border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600"
+                          : "bg-white border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-600"
                       }`}
                     >
                       {copied ? (
@@ -170,7 +170,7 @@ export default function ContactContent() {
                       href={GITHUB_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg border bg-white border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg border bg-white border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-600 transition-all duration-200"
                     >
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />

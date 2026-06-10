@@ -32,7 +32,7 @@ export default function NavBar() {
             height={32}
             className="rounded-lg"
           />
-          <span className="font-bold text-lg text-slate-900">TransLite</span>
+          <span className="font-bold text-lg gradient-text">TransLite</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -45,7 +45,7 @@ export default function NavBar() {
                   href={link.href}
                   className={`nav-link px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-indigo-600"
+                      ? "text-emerald-600"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
@@ -101,7 +101,7 @@ export default function NavBar() {
                     onClick={() => setMobileOpen(false)}
                     className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                       isActive
-                        ? "text-indigo-600 bg-indigo-50"
+                        ? "text-emerald-600 bg-emerald-50"
                         : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                     }`}
                   >

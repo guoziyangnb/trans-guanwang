@@ -31,15 +31,15 @@ export default function HomeContent() {
       <section className="relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-indigo-100/40 blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-violet-100/40 blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-emerald-100/40 blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-teal-100/40 blur-3xl" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-20 sm:pt-24 sm:pb-20">
           <div className="text-center max-w-3xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-medium mb-6">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               {t.home.badge}
             </div>
 
@@ -183,17 +183,17 @@ export default function HomeContent() {
       {/* ===== CTA Section ===== */}
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <div className="rounded-3xl bg-linear-to-br from-indigo-600 via-indigo-700 to-violet-700 p-8 sm:p-12 lg:p-16 shadow-2xl shadow-indigo-500/20">
+          <div className="rounded-3xl bg-linear-to-br from-emerald-600 via-emerald-700 to-teal-700 p-8 sm:p-12 lg:p-16 shadow-2xl shadow-emerald-500/20">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               {t.home.ctaTitle}
             </h2>
-            <p className="mt-4 text-indigo-200 text-lg max-w-xl mx-auto">
+            <p className="mt-4 text-emerald-200 text-lg max-w-xl mx-auto">
               {t.home.ctaDesc}
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="/download"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-indigo-700 bg-white hover:bg-indigo-50 shadow-lg transition-all duration-200"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-emerald-700 bg-white hover:bg-emerald-50 shadow-lg transition-all duration-200"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -202,7 +202,7 @@ export default function HomeContent() {
               </a>
               <a
                 href="/docs"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-white border border-indigo-400 hover:bg-indigo-600 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-white border border-emerald-400 hover:bg-emerald-600 transition-all duration-200"
               >
                 {t.home.readDocs}
               </a>

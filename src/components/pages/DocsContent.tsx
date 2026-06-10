@@ -44,7 +44,7 @@ export default function DocsContent() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
+                  className="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-colors"
                 >
                   {item.label}
                 </a>
@@ -94,7 +94,7 @@ export default function DocsContent() {
                     {d.installation.binaryTextPre}
                     <a
                       href="/download"
-                      className="text-indigo-600 hover:text-indigo-500 font-medium"
+                      className="text-emerald-600 hover:text-emerald-500 font-medium"
                     >
                       {d.installation.binaryLink}
                     </a>
@@ -170,7 +170,7 @@ export default function DocsContent() {
                       key={item}
                       className="flex items-start gap-2 text-sm text-slate-600"
                     >
-                      {checkIcon("text-indigo-500")}
+                      {checkIcon("text-emerald-500")}
                       {item}
                     </li>
                   ))}
@@ -206,7 +206,7 @@ export default function DocsContent() {
                   <ul className="space-y-2 text-sm text-slate-600">
                     {d.providers.featureItems.map((item) => (
                       <li key={item.strong} className="flex items-start gap-2">
-                        {checkIcon("text-indigo-500")}
+                        {checkIcon("text-emerald-500")}
                         <span>
                           <strong>{item.strong}</strong>
                           {item.text}
@@ -247,9 +247,9 @@ export default function DocsContent() {
                     </code>
                     {d.localModels.defaultTextPost}
                   </p>
-                  <div className="flex items-start gap-3 p-3 rounded-xl bg-blue-50 border border-blue-100">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-teal-50 border border-teal-100">
                     <svg
-                      className="w-5 h-5 text-blue-600 shrink-0 mt-0.5"
+                      className="w-5 h-5 text-teal-600 shrink-0 mt-0.5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -261,7 +261,7 @@ export default function DocsContent() {
                         d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
                       />
                     </svg>
-                    <div className="text-sm text-blue-700">
+                    <div className="text-sm text-teal-700">
                       <strong>{d.localModels.privacyStrong}</strong>
                       {d.localModels.privacyText}
                     </div>
@@ -334,7 +334,7 @@ export default function DocsContent() {
                       key={idx}
                       className="flex items-start gap-2 text-sm text-slate-600"
                     >
-                      {checkIcon("text-indigo-500")}
+                      {checkIcon("text-emerald-500")}
                       <span>
                         {item.strong && <strong>{item.strong}</strong>}
                         {item.text}
@@ -354,7 +354,7 @@ export default function DocsContent() {
                 {d.faq.items.map((faq, idx) => (
                   <details
                     key={idx}
-                    className="group p-5 rounded-2xl border border-slate-100 bg-white open:border-indigo-100 open:shadow-sm transition-all"
+                    className="group p-5 rounded-2xl border border-slate-100 bg-white open:border-emerald-100 open:shadow-sm transition-all"
                   >
                     <summary className="flex items-center justify-between cursor-pointer list-none">
                       <span className="font-medium text-slate-900 text-sm">
