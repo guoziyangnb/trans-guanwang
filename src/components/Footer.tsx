@@ -19,8 +19,8 @@ export default function Footer() {
     {
       title: t.footer.resources,
       links: [
-        { label: t.footer.github, href: "https://github.com" },
-        { label: t.footer.issues, href: "https://github.com" },
+        { label: t.footer.github, href: "https://github.com/guoziyangnb/translite" },
+        { label: t.footer.issues, href: "https://github.com/guoziyangnb/translite" },
         { label: t.footer.changelog, href: "/docs" },
       ],
     },
@@ -78,7 +78,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/guoziyangnb/translite"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-slate-500 hover:text-emerald-600 transition-colors flex items-center gap-2"

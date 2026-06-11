@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const EMAIL = "xxx@example.com";
-const GITHUB_URL = "https://github.com";
+const GITHUB_URL = "https://github.com/guoziyangnb/translite";
 
 const GREETINGS = [
   { text: "你好",      style: { top: "10%",  left: "8%",   fontSize: "2.25rem", transform: "rotate(-6deg)" } },
@@ -20,13 +20,13 @@ export default function ContactContent() {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [qrOpen, setQrOpen] = useState(false);
-  const wechatRef = useRef<HTMLDivElement>(null);
+  const qqRef = useRef<HTMLDivElement>(null);
 
-  // Close WeChat tooltip on outside click or Escape
+  // Close QQ tooltip on outside click or Escape
   useEffect(() => {
     if (!qrOpen) return;
     const onDown = (e: MouseEvent) => {
-      if (wechatRef.current && !wechatRef.current.contains(e.target as Node)) {
+      if (qqRef.current && !qqRef.current.contains(e.target as Node)) {
         setQrOpen(false);
       }
     };
@@ -182,52 +182,58 @@ export default function ContactContent() {
               </div>
             </div>
 
-            {/* WeChat */}
-            <div className="feature-card" ref={wechatRef}>
+            {/* QQ */}
+            <div className="feature-card" ref={qqRef}>
               <div className="flex items-start gap-4">
                 <div className="inline-flex p-3 rounded-xl bg-emerald-50 text-emerald-600 shrink-0">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8.69 4C4.65 4 1.38 6.72 1.38 10.08c0 1.93 1.09 3.65 2.81 4.79l-.7 2.12 2.47-1.24c.88.17 1.78.29 2.71.29.23 0 .46-.01.69-.03-.15-.5-.23-1.03-.23-1.58 0-3.27 3.18-5.92 7.1-5.92.13 0 .26 0 .39.01C15.79 5.71 12.55 4 8.69 4zM5.85 8.39c.54 0 .98.44.98.98 0 .54-.44.98-.98.98a.98.98 0 110-1.96zm5.61 0c.54 0 .98.44.98.98 0 .54-.44.98-.98.98a.98.98 0 110-1.96zM16.5 10.45c-3.49 0-6.31 2.34-6.31 5.22 0 2.88 2.82 5.22 6.31 5.22.74 0 1.45-.11 2.13-.27l1.95.99-.55-1.62c1.43-.97 2.34-2.42 2.34-4.06 0-2.88-2.82-5.22-6.31-5.22zm-2.07 3.65a.78.78 0 110 1.56.78.78 0 010-1.56zm4.13 0a.78.78 0 110 1.56.78.78 0 010-1.56z" />
+                    <path d="M29.11 26.278c-0.72 0.087-2.804-3.296-2.804-3.296 0 1.959-1.009 4.515-3.191 6.362 1.052 0.325 3.428 1.198 2.863 2.151-0.457 0.772-7.844 0.493-9.977 0.252-2.133 0.24-9.52 0.519-9.977-0.252-0.565-0.953 1.807-1.826 2.861-2.151-2.182-1.846-3.191-4.403-3.191-6.362 0 0-2.083 3.384-2.804 3.296-0.335-0.041-0.776-1.853 0.584-6.231 0.641-2.064 1.375-3.78 2.509-6.611-0.191-7.306 2.828-13.435 10.016-13.435 7.109 0.001 10.197 6.008 10.017 13.435 1.132 2.826 1.869 4.553 2.509 6.611 1.361 4.379 0.92 6.191 0.584 6.231z"/>
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg font-bold text-slate-900 mb-1">
-                    {t.contact.wechat.title}
+                    {t.contact.qq.title}
                   </h3>
                   <p className="text-sm text-slate-500 leading-relaxed mb-3">
-                    {t.contact.wechat.desc}
+                    {t.contact.qq.desc}
                   </p>
-                  <div className="wechat-tooltip-wrap inline-block">
-                    <button
-                      type="button"
-                      onClick={() => setQrOpen((v) => !v)}
-                      aria-expanded={qrOpen}
-                      className={`inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg border transition-all duration-200 ${
-                        qrOpen
-                          ? "bg-emerald-50 border-emerald-300 text-emerald-700"
-                          : "bg-white border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-600"
-                      }`}
-                    >
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5zM13.5 14.625v4.5M16.5 13.5v3M19.5 13.5v3M13.5 19.5h6" />
-                      </svg>
-                      {t.contact.wechat.action}
-                    </button>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <code className="text-sm font-mono text-slate-700 bg-slate-50 rounded-lg px-3 py-1.5 border border-slate-100 break-all">
+                      <span className="text-slate-500 mr-1.5">{t.contact.qq.numberLabel}</span>
+                      {t.contact.qq.number}
+                    </code>
+                    <div className="wechat-tooltip-wrap inline-block">
+                      <button
+                        type="button"
+                        onClick={() => setQrOpen((v) => !v)}
+                        aria-expanded={qrOpen}
+                        className={`inline-flex items-center gap-1.5 text-sm font-medium px-3 py-1.5 rounded-lg border transition-all duration-200 ${
+                          qrOpen
+                            ? "bg-emerald-50 border-emerald-300 text-emerald-700"
+                            : "bg-white border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-emerald-600"
+                        }`}
+                      >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5zM13.5 14.625v4.5M16.5 13.5v3M19.5 13.5v3M13.5 19.5h6" />
+                        </svg>
+                        {t.contact.qq.action}
+                      </button>
 
-                    {qrOpen && (
-                      <div className="wechat-tooltip" role="dialog">
-                        <Image
-                          src="/icon.png"
-                          alt={t.contact.wechat.title}
-                          width={220}
-                          height={220}
-                          className="wechat-tooltip-image"
-                        />
-                        <p className="wechat-tooltip-caption">
-                          {t.contact.wechat.hint}
-                        </p>
-                      </div>
-                    )}
+                      {qrOpen && (
+                        <div className="wechat-tooltip" role="dialog">
+                          <Image
+                            src="/concat.jpg"
+                            alt={t.contact.qq.title}
+                            width={220}
+                            height={220}
+                            className="wechat-tooltip-image"
+                          />
+                          <p className="wechat-tooltip-caption">
+                            {t.contact.qq.hint}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

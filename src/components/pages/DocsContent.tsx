@@ -109,7 +109,7 @@ export default function DocsContent() {
                     <div className="space-y-1">
                       <p>
                         <span className="text-green-400">$</span> git clone
-                        https://github.com/yourusername/translite.git
+                        https://github.com/guoziyangnb/translite.git
                       </p>
                       <p>
                         <span className="text-green-400">$</span> cd translite

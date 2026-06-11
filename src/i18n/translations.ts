@@ -313,11 +313,13 @@ const en = {
       desc: "Issues, pull requests, and source code.",
       action: "Visit GitHub",
     },
-    wechat: {
-      title: "WeChat Group",
-      desc: "Join our WeChat group chat for discussions and updates.",
+    qq: {
+      title: "QQ Group",
+      desc: "Join our QQ group chat for discussions and updates.",
+      number: "769725403",
+      numberLabel: "Group No.",
       action: "View QR Code",
-      hint: "Scan with WeChat to join",
+      hint: "Scan with QQ to join · Group No. 769725403",
     },
     responseTitle: "Response Time",
     responseDesc:
@@ -631,11 +633,13 @@ const zh: Dict = {
       desc: "提交 Issue、Pull Request 或查看源码。",
       action: "前往 GitHub",
     },
-    wechat: {
-      title: "微信交流群",
-      desc: "加入微信群交流讨论与获取最新动态。",
+    qq: {
+      title: "QQ 交流群",
+      desc: "加入 QQ 群交流讨论与获取最新动态。",
+      number: "769725403",
+      numberLabel: "群号",
       action: "查看二维码",
-      hint: "微信扫码加入",
+      hint: "QQ 扫码加入 · 群号 769725403",
     },
     responseTitle: "回复时间",
     responseDesc:
