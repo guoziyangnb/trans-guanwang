@@ -1,0 +1,67 @@
+name: Ping IndexNow
+
+# Triggers:
+#   - On every push to master/main (also fires when Gitee mirrors to GitHub)
+#   - Manual run from the Actions tab (for ad-hoc resubmission)
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Wait for Vercel deployment to be live
+        # Vercel typically deploys a Next.js site of this size in 30–90s.
+        # We sleep 120s as a safe margin so IndexNow pings the new build, not the old one.
+        run: |
+          echo "Sleeping 120s to let Vercel finish deploying..."
+          sleep 120
+
+      - name: Verify IndexNow key file is reachable
+        # IndexNow rejects pings if the key file at keyLocation can't be fetched.
+        run: |
+          set -e
+          URL="https://translite.guoziyang.com/6cc3de9ed3b5488fbf57f3e3c91faa55.txt"
+          echo "Checking $URL ..."
+          status=$(curl -s -o /tmp/keyfile -w "%{http_code}" "$URL")
+          if [ "$status" != "200" ]; then
+            echo "ERROR: key file is not publicly accessible (HTTP $status)"
+            exit 1
+          fi
+          content=$(cat /tmp/keyfile | tr -d '[:space:]')
+          if [ "$content" != "6cc3de9ed3b5488fbf57f3e3c91faa55" ]; then
+            echo "ERROR: key file content mismatch. Got: $content"
+            exit 1
+          fi
+          echo "Key file verified."
+
+      - name: Submit URLs to IndexNow
+        run: |
+          set -e
+          response=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "translite.guoziyang.com",
+              "key": "6cc3de9ed3b5488fbf57f3e3c91faa55",
+              "keyLocation": "https://translite.guoziyang.com/6cc3de9ed3b5488fbf57f3e3c91faa55.txt",
+              "urlList": [
+                "https://translite.guoziyang.com/",
+                "https://translite.guoziyang.com/features",
+                "https://translite.guoziyang.com/download",
+                "https://translite.guoziyang.com/docs",
+                "https://translite.guoziyang.com/contact"
+              ]
+            }')
+          status=$(echo "$response" | tail -n 1)
+          body=$(echo "$response" | sed '$d')
+          echo "HTTP status: $status"
+          echo "Body: $body"
+          # IndexNow returns 200 (URLs submitted) or 202 (received, queued).
+          # 422 = invalid request; 400 = bad request; 403 = key mismatch.
+          case "$status" in
+            200|202) echo "IndexNow submission accepted." ;;
+            *) echo "ERROR: IndexNow returned $status"; exit 1 ;;
+          esac
