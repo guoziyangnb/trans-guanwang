@@ -28,8 +28,8 @@ export default function NavBar() {
           <Image
             src="/icon.png"
             alt="TransLite"
-            width={32}
-            height={32}
+            width={48}
+            height={48}
             className="rounded-lg"
           />
           <span className="font-bold text-lg gradient-text">TransLite</span>
