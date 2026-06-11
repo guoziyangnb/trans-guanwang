@@ -186,7 +186,7 @@ export default function ContactContent() {
             <div className="feature-card" ref={qqRef}>
               <div className="flex items-start gap-4">
                 <div className="inline-flex p-3 rounded-xl bg-emerald-50 text-emerald-600 shrink-0">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
                     <path d="M29.11 26.278c-0.72 0.087-2.804-3.296-2.804-3.296 0 1.959-1.009 4.515-3.191 6.362 1.052 0.325 3.428 1.198 2.863 2.151-0.457 0.772-7.844 0.493-9.977 0.252-2.133 0.24-9.52 0.519-9.977-0.252-0.565-0.953 1.807-1.826 2.861-2.151-2.182-1.846-3.191-4.403-3.191-6.362 0 0-2.083 3.384-2.804 3.296-0.335-0.041-0.776-1.853 0.584-6.231 0.641-2.064 1.375-3.78 2.509-6.611-0.191-7.306 2.828-13.435 10.016-13.435 7.109 0.001 10.197 6.008 10.017 13.435 1.132 2.826 1.869 4.553 2.509 6.611 1.361 4.379 0.92 6.191 0.584 6.231z"/>
                   </svg>
                 </div>
@@ -202,7 +202,7 @@ export default function ContactContent() {
                       <span className="text-slate-500 mr-1.5">{t.contact.qq.numberLabel}</span>
                       {t.contact.qq.number}
                     </code>
-                    <div className="wechat-tooltip-wrap inline-block">
+                    <div className="qq-tooltip-wrap inline-block">
                       <button
                         type="button"
                         onClick={() => setQrOpen((v) => !v)}
@@ -220,15 +220,15 @@ export default function ContactContent() {
                       </button>
 
                       {qrOpen && (
-                        <div className="wechat-tooltip" role="dialog">
+                        <div className="qq-tooltip" role="dialog">
                           <Image
                             src="/concat.jpg"
                             alt={t.contact.qq.title}
-                            width={220}
-                            height={220}
-                            className="wechat-tooltip-image"
+                            width={280}
+                            height={498}
+                            className="qq-tooltip-image"
                           />
-                          <p className="wechat-tooltip-caption">
+                          <p className="qq-tooltip-caption">
                             {t.contact.qq.hint}
                           </p>
                         </div>

@@ -351,11 +351,11 @@ html {
   50%      { transform: scale(1.05); }
 }
 
-/* WeChat tooltip — popover with arrow + zoom-in animation */
-.wechat-tooltip-wrap {
+/* QQ tooltip — popover with arrow + zoom-in animation */
+.qq-tooltip-wrap {
   position: relative;
 }
-.wechat-tooltip {
+.qq-tooltip {
   position: absolute;
   bottom: calc(100% + 14px);
   left: 50%;
@@ -370,7 +370,7 @@ html {
   animation: tooltipPop 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   transform-origin: bottom center;
 }
-.wechat-tooltip::after {
+.qq-tooltip::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -384,11 +384,14 @@ html {
   rotate: 45deg;
   margin-top: -7px;
 }
-.wechat-tooltip-image {
+.qq-tooltip-image {
   display: block;
+  width: 280px;
+  height: auto;
+  max-width: none;
   border-radius: 0.75rem;
 }
-.wechat-tooltip-caption {
+.qq-tooltip-caption {
   margin-top: 0.625rem;
   text-align: center;
   font-size: 0.75rem;
