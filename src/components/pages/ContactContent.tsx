@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const EMAIL = "xxx@example.com";
+const EMAIL = "translite2026@163.com";
 const GITHUB_URL = "https://github.com/guoziyangnb/translite";
 
 const GREETINGS = [
