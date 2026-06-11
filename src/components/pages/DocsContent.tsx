@@ -285,13 +285,19 @@ export default function DocsContent() {
               </h2>
               <div className="p-6 rounded-2xl border border-slate-100 bg-white">
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between py-2 border-b border-slate-100">
+                  <div className="flex items-center justify-between py-2 border-b border-slate-100 gap-3 flex-wrap">
                     <span className="text-sm text-slate-700">
                       {d.shortcuts.quickOpen}
                     </span>
-                    <kbd className="px-2.5 py-1 rounded-lg bg-slate-100 text-xs font-mono font-semibold text-slate-600">
-                      Alt + Space
-                    </kbd>
+                    <div className="flex items-center gap-2">
+                      <kbd className="px-2.5 py-1 rounded-lg bg-slate-100 text-xs font-mono font-semibold text-slate-600">
+                        Ctrl + Shift + T
+                      </kbd>
+                      <span className="text-xs text-slate-400">/</span>
+                      <kbd className="px-2.5 py-1 rounded-lg bg-slate-100 text-xs font-mono font-semibold text-slate-600">
+                        Command + Shift + T
+                      </kbd>
+                    </div>
                   </div>
                   <div className="flex items-center justify-between py-2 border-b border-slate-100">
                     <span className="text-sm text-slate-700">

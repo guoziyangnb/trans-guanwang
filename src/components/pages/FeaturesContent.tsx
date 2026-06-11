@@ -54,10 +54,16 @@ export default function FeaturesContent() {
                 </p>
               </div>
               <div className="md:col-span-3 p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <kbd className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-mono font-semibold text-slate-600 shadow-xs">
-                    Alt + Space
-                  </kbd>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <kbd className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-mono font-semibold text-slate-600 shadow-xs">
+                      Ctrl + Shift + T
+                    </kbd>
+                    <span className="text-xs text-slate-400">/</span>
+                    <kbd className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-mono font-semibold text-slate-600 shadow-xs">
+                      Command + Shift + T
+                    </kbd>
+                  </div>
                   <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -67,7 +73,9 @@ export default function FeaturesContent() {
                 </div>
                 <p className="mt-4 text-sm text-slate-400">
                   {t.features.shortcut.configurable}{" "}
-                  <kbd className="px-1.5 py-0.5 rounded bg-slate-100 text-xs font-mono">Alt+Space</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded bg-slate-100 text-xs font-mono">Ctrl+Shift+T</kbd>
+                  {" / "}
+                  <kbd className="px-1.5 py-0.5 rounded bg-slate-100 text-xs font-mono">Command+Shift+T</kbd>
                 </p>
               </div>
             </div>
