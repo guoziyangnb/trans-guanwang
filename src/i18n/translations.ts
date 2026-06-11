@@ -41,7 +41,7 @@ const en = {
     {
       title: "Global Shortcut",
       description:
-        "Quick-open the translation window from anywhere with a customizable global hotkey. No context switching needed.",
+        "Quick-open the translation window from anywhere with a global hotkey. No context switching needed.",
     },
     {
       title: "Local Model Translation",
@@ -84,9 +84,9 @@ const en = {
       "Designed for developers, writers, and anyone who needs fast, reliable translation.",
     shortcut: {
       title: "Global Shortcut Quick-Open",
-      desc: "Set a customizable global hotkey to summon the translation window from any application. No more alt-tabbing or searching for the app — just press your shortcut and translate instantly.",
+      desc: "Use a global hotkey to summon the translation window from any application. No more alt-tabbing or searching for the app — just press the shortcut and translate instantly.",
       windowOpens: "Translation window opens instantly",
-      configurable: "Configurable in settings. Default:",
+      configurable: "Shortcut:",
     },
     localModel: {
       title: "Local Model Translation",
@@ -116,13 +116,11 @@ const en = {
   download: {
     titlePre: "Download",
     titleAccent: "TransLite",
-    subtitle: "Free and open source. Available for Windows, macOS, and Linux.",
+    subtitle: "Free and open source. Available for Windows and macOS.",
     downloadFor: (platform: string) => `Download for ${platform}`,
     platformNotes: {
       windows: "Installer (NSIS)",
       macos: "DMG",
-      linux: "AppImage",
-      linuxVersion: "Modern distros",
     },
     noticeStrong: "Note:",
     noticeText:
@@ -135,9 +133,8 @@ const en = {
       "Initial public release",
       "Local model translation with ONNX Runtime",
       "DeepSeek, GLM, Kimi, OpenAI, Claude, Gemini provider support",
-      "Customizable global shortcut (Ctrl+Shift+T / Command+Shift+T)",
+      "Global shortcut (Ctrl+Shift+T / Command+Shift+T)",
       "Usage tracking with JS extractor templates",
-      "Cross-platform (Windows, macOS, Linux)",
     ],
   },
   docs: {
@@ -161,7 +158,7 @@ const en = {
       prereqTitle: "Prerequisites",
       prereqs: [
         "Node.js 18+ and npm",
-        "Operating system: Windows 10+, macOS 12+, or Linux",
+        "Operating system: Windows 10+ or macOS 12+",
         "For local translation: ~4GB free disk space for model download",
       ],
     },
@@ -244,7 +241,7 @@ const en = {
       closeWindow: "Close window",
       moreSoon: "(More shortcuts coming soon)",
       inDevelopment: "In development",
-      note: "The global shortcut is customizable in Settings.",
+      note: "Press the shortcut from any application to open the translation window.",
     },
     usageTracking: {
       title: "Usage Tracking",
@@ -291,7 +288,7 @@ const en = {
         },
         {
           q: "Which platforms are supported?",
-          a: "Windows 10+, macOS 12+, and Linux (modern distributions).",
+          a: "Windows 10+ and macOS 12+.",
         },
       ],
     },
@@ -381,7 +378,7 @@ const zh: Dict = {
     {
       title: "全局快捷键",
       description:
-        "通过可自定义的全局快捷键随时唤起翻译窗口，无需切换上下文。",
+        "通过全局快捷键随时唤起翻译窗口，无需切换上下文。",
     },
     {
       title: "本地模型翻译",
@@ -423,9 +420,9 @@ const zh: Dict = {
     diffSubtitle: "为开发者、写作者以及所有需要快速可靠翻译的人而设计。",
     shortcut: {
       title: "全局快捷键唤起",
-      desc: "设置可自定义的全局快捷键，在任何应用中召唤翻译窗口。无需 Alt-Tab 或寻找应用——按下快捷键即可立即翻译。",
+      desc: "通过全局快捷键，在任何应用中召唤翻译窗口。无需 Alt-Tab 或寻找应用——按下快捷键即可立即翻译。",
       windowOpens: "翻译窗口立即打开",
-      configurable: "可在设置中配置。默认：",
+      configurable: "快捷键：",
     },
     localModel: {
       title: "本地模型翻译",
@@ -454,13 +451,11 @@ const zh: Dict = {
   download: {
     titlePre: "下载",
     titleAccent: "TransLite",
-    subtitle: "免费开源。支持 Windows、macOS 和 Linux。",
+    subtitle: "免费开源。支持 Windows 与 macOS。",
     downloadFor: (platform: string) => `下载 ${platform} 版`,
     platformNotes: {
       windows: "安装包 (NSIS)",
       macos: "DMG 镜像",
-      linux: "AppImage",
-      linuxVersion: "主流发行版",
     },
     noticeStrong: "注意：",
     noticeText:
@@ -473,9 +468,8 @@ const zh: Dict = {
       "首个公开版本",
       "基于 ONNX Runtime 的本地模型翻译",
       "支持 DeepSeek、GLM、Kimi、OpenAI、Claude、Gemini 服务商",
-      "可自定义全局快捷键 (Ctrl+Shift+T / Command+Shift+T)",
+      "全局快捷键 (Ctrl+Shift+T / Command+Shift+T)",
       "基于 JS 提取器模板的用量统计",
-      "跨平台（Windows、macOS、Linux）",
     ],
   },
   docs: {
@@ -499,7 +493,7 @@ const zh: Dict = {
       prereqTitle: "前置条件",
       prereqs: [
         "Node.js 18+ 和 npm",
-        "操作系统：Windows 10+、macOS 12+ 或 Linux",
+        "操作系统：Windows 10+ 或 macOS 12+",
         "本地翻译需约 4GB 可用磁盘空间用于下载模型",
       ],
     },
@@ -568,7 +562,7 @@ const zh: Dict = {
       closeWindow: "关闭窗口",
       moreSoon: "（更多快捷键即将推出）",
       inDevelopment: "开发中",
-      note: "全局快捷键可在设置中自定义。",
+      note: "在任何应用中按下快捷键即可唤起翻译窗口。",
     },
     usageTracking: {
       title: "用量统计",
@@ -612,7 +606,7 @@ const zh: Dict = {
         },
         {
           q: "支持哪些平台？",
-          a: "Windows 10+、macOS 12+ 以及 Linux（主流发行版）。",
+          a: "Windows 10+ 和 macOS 12+。",
         },
       ],
     },
