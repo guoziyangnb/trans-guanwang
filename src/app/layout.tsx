@@ -84,6 +84,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "QIoUPtJVAsTzCNixIZUd4A02lcwvMtixG0dQxYrvCTY",
+    other: {
+      "baidu-site-verification": "codeva-vkW3WLDq9a",
+    },
   },
   category: "productivity",
 };
